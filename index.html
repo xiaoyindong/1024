@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta name="format-detection" content="telephone=no">
+    <title>程序员节日快乐</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/attack.css">
+    <link rel="stylesheet" type="text/css" href="css/step2.css">
+</head>
+
+<body>
+    <div id="step1">
+        <div class="part_one">
+            <div class="part1_border">
+                <div class="main_text">Hello World</div>
+                <div class="monkey"></div>
+                <div class="text_2"><span>程</span><span>序</span><span>员</span><span>节</span></div>
+                <div class="text_3">Programmer`s Day</div>
+                <div class="text_4_pho">
+                    <img id="attack" class="block" src="images/bg/page_text.gif" />
+                    <div id="attack_wrap" class="hide">
+                        <p class="user_name"></p>
+                        <p class="special_text">You are special.</p>
+                        <div class="label_list clearfix">
+                            <span class="label_item">adorable</span>
+                            <span class="label_item">extraordinary</span>
+                            <span class="label_item">imaginative</span>
+                            <span class="label_item">cute</span>
+                            <span class="label_item">smart</span>
+                            <span class="label_item">lovely</span>
+                            <span class="label_item">outstanding</span>
+                            <span class="label_item">impressive</span>
+                            <span class="label_item">incomparable</span>
+                            <span class="label_item">attractive</span>
+                            <span class="label_item">charming</span>
+                            <span class="label_item">brilliant</span>
+                            <span class="label_item">excellent</span>
+                            <span class="label_item">sweet</span>
+                            <span class="label_item">energetic</span>
+                            <span class="label_item">responsible</span>
+                            <span class="label_item">cheerful</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="attack_color">
+            <div class="attack_text">入侵危机</div>
+        </div>
+        <canvas id="canvas"></canvas>
+    </div>
+    <div id="step2">
+        <div id="pageBg"></div>
+        <div id="view">
+            <div id="mian">
+                <div id="tZ">
+                    <div id="wanted" class="wantedhide">
+                        <div class="item_line first_line">
+                            <span>昵称:</span>
+                            <span class="name"></span>
+                        </div>
+                        <div class="item_line">
+                            <span>职业:</span>
+                            <span class="job"></span>
+                        </div>
+                        <div class="item_line">
+                            <span>性格:</span>
+                            <span class="speacl"></span>
+                        </div>
+                        <div class="item_line">
+                            <span>鉴定:</span>
+                            <span class="sex"></span>
+                        </div>
+                        <div class="page_title">黑客通缉令</div>
+                        <img class="user_photo" />
+                        <div class="card_container"></div>
+                    </div>
+                    <div id="panoBg"></div>
+                    <div id="cloud"></div>
+                    <div id="pano"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript" src="js/m.Tween.js"></script>
+    <script type="text/javascript" src="js/step2.js?v=1.0.0"></script>
+    <script src="js/attack.js"></script>
+    <script src="https://g.alicdn.com/dingding/dingtalk-jsapi/2.7.13/dingtalk.open.js"></script>
+    <script>
+        var autoPlay = false;
+        window.userInfo = {};
+        document.getElementById('attack').addEventListener('click', function () {
+            autoPlay = true;
+            setLoding();
+            chooseLabel();
+        });
+
+        setTimeout(function () {
+            if (autoPlay) {
+                return;
+            }
+            window.speac = '';
+            chooseLabel();
+        }, 2000)
+
+        dd.ready(function () {
+            dd.runtime.permission.requestAuthCode({
+                corpId: 'xxxx', // 企业id
+                onSuccess: function (info) {
+                    getUserInfo(info.code);
+                },
+                onFail: function (err) {
+                    window.alert(JSON.stringify(err) + 0)
+                }
+            });
+        });
+
+        function getUserInfo(code) {
+            $.ajax({
+                type: "GET",
+                url: '',
+                dataType: "json",
+                data: {
+                    code: code
+                },
+                success: function (data) {
+                    if (data.success) {
+                        window.userInfo = data.data || {};
+                        sessionStorage.userInfo = JSON.stringify(data.data);
+                        document.getElementsByClassName('user_name')[0].innerText = window.userInfo.name + '：';
+                    } else {
+                        alert(data.message);
+                    }
+                },
+                //请求失败，包含具体的错误信息
+                error: function (e) {
+                    alert(JSON.stringify(e));
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

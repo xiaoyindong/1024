@@ -1,0 +1,74 @@
+#attack {
+    width: 80%;
+    border: none;
+    margin: 0 auto;
+    transform: scale(1);
+    transition: 1s;
+}
+.block {
+    display: block;
+}
+.hide {
+    display: none;
+}
+#attack_wrap {
+    transform: scale(0);
+    transition: 1s;
+}
+#attack_wrap {
+    padding: 0 20px;
+}
+.user_name {
+    font-size: 22px;
+    text-align: left;
+    text-indent: 5px;
+    color: #292b2b;
+}
+#attack_wrap .special_text {
+    font-size: 16px;
+    line-height: 28px;
+    text-indent: 5px;
+}
+.clearfix:after {
+    content: "";
+    display:  block;
+    clear: both;
+}
+
+.label_item {
+    float: left;
+    font-size: 14px;
+    padding: 4px 8px 6px;
+    line-height: 16px;
+    border: 1px solid #ee7c1a;
+    color: #ff1a59;
+    margin: 4px;
+    border-radius: 13px;
+}
+#attack_color {
+    position: fixed;
+    display: none;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+    background: red;
+}
+
+.attack_text {
+    font-size: 32px;
+    line-height: 40px;
+    width: 60%;
+    height: 40px;
+    border: 3px solid blue;
+    text-align: center;
+    color: green;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}

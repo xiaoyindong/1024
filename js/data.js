@@ -1,0 +1,31 @@
+var imgData = {
+	cloud:[
+		"images/bg/cloud1.png",
+		"images/bg/cloud2.png",
+		"images/bg/cloud3.png"
+	],
+	pageBg:["images/bg/bg.jpg"],
+	bg:[
+		"images/bg/1_01.jpg",
+		"images/bg/1_02.jpg",
+		"images/bg/1_03.jpg",
+		"images/bg/1_04.jpg",
+		"images/bg/1_05.jpg",
+		"images/bg/1_06.jpg",
+		"images/bg/1_07.jpg",
+		"images/bg/1_08.jpg",
+		"images/bg/1_09.jpg",
+		"images/bg/1_10.jpg",
+		"images/bg/1_11.jpg",
+		"images/bg/1_12.jpg",
+		"images/bg/1_13.jpg",
+		"images/bg/1_14.jpg",
+		"images/bg/1_15.jpg",
+		"images/bg/1_16.jpg",
+		"images/bg/1_17.jpg",
+		"images/bg/1_18.jpg",
+		"images/bg/1_19.jpg",
+		"images/bg/1_20.jpg"
+	],
+	pano:[]
+};
